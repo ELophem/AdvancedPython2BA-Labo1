@@ -8,7 +8,8 @@ import utils
 class TestUtils(unittest.TestCase):
     def test_fact(self):
         # À compléter...
-        pass
+        pass 
+    
     
     def test_roots(self):
         # À compléter...
