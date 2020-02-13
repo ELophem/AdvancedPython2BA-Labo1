@@ -2,24 +2,20 @@
 # Math library
 # Author: Sébastien Combéfis
 # Version: February 8, 2018
+import math
+from cmath import sqrt
 
 def fact(n):
-	"""Computes the factorial of a natural number.
-	
-	Pre: -
-	Post: Returns the factorial of 'n'.
-	Throws: ValueError if n < 0
-	"""
-	pass
+	return math.factorial(n)
 
 def roots(a, b, c):
-	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
-	
-	Pre: -
-	Post: Returns a tuple with zero, one or two elements corresponding
-		to the roots of the ax^2 + bx + c polynomial.
-	"""
-	pass
+	delta = (b**2 - 4*a*c)
+	root1 = (-b + sqrt(delta))/(2*a)
+	root2 = (-b - sqrt(delta))/(2*a)
+	if root1 != root2:
+		return (root1, root2)
+	if root1 == root2:
+		return(root1)
 
 def integrate(function, lower, upper):
 	"""Approximates the integral of a fonction between two bounds
@@ -38,5 +34,5 @@ def integrate(function, lower, upper):
 
 if __name__ == '__main__':
 	print(fact(5))
-	print(roots(1, 0, 1))
+	print(roots(2, 5, 1))
 	print(integrate('x ** 2 - 1', -1, 1))
